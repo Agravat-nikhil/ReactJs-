@@ -1,0 +1,10 @@
+javascript : it's clientside scripting language
+ : can create data dynamc
+ - can detect user's browser
+ - document.write()
+
+Data types  : char- "Tops",float=12.3.45.6,int=45,1278,45874
+		boolean - true,false
+
+variable : variables are used to storing values
+        var,let,const
