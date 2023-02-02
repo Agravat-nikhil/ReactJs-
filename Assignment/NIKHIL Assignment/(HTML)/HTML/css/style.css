@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: rgb(141, 148, 151);
+    width: 70%;
+    margin-left: 15%;
+}
+
+.main {
+    background-color: rgb(65, 184, 231);
+    width: 70%;
+    margin-left: 15%;
+}
+
+h3 {
+    color: rgb(14, 6, 124);
+}
