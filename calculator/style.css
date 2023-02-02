@@ -1,0 +1,56 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: skyblue;
+}
+.cal 
+{
+    width: 40%;
+    height: auto;
+    margin: auto;
+    padding: 15px;
+    background-color:white;
+    margin-top: 5%;
+}
+.cal input 
+{
+    border: 0;
+    padding: 5px;
+    
+}
+::placeholder 
+{
+    color: black;
+    font-size: 18px;
+    
+}
+.calculator
+{
+    width: 40%;
+    height: auto;
+    margin: auto;
+    padding: 15px;
+    background-color: red;
+}
+#btn 
+{
+    width: 24%;
+    min-height: 8vh;
+    font-size: 14px;
+    font-weight: 100;
+    border: none;
+    color: white;
+    background-color: gray;
+}
+#btn1 
+{
+    width: 24%;
+    min-height: 8vh;
+    font-size: 14px;
+    font-weight: 100;
+    border: none;
+    color: black;
+    background-color: lightgray;
+}

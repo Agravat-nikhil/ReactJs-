@@ -1,0 +1,14 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+.abc input{
+        border: none;
+        border-bottom: 1px solid black;
+        width: 100%;
+}
+
+.slick-slider {
+        margin: 40px;
+    }
