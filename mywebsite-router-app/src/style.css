@@ -1,0 +1,39 @@
+body 
+{
+	margin: 0;
+	padding: 0;
+	background-color: lightgray;
+}
+
+.navbar 
+{
+	width: 100%;
+	height: auto;
+	margin: auto;
+	padding: 5px 10px;
+
+
+}
+.navbar-link li 
+{
+	display: inline-block;
+	padding: 5px 15px;
+	font-size: 20px;
+	text-decoration: none;
+	list-style-type: none;
+}
+.navbar-link a 
+{
+	text-decoration: none;
+	list-style-type: none;
+	color:black;
+}
+
+.content 
+{
+	width: 88%;
+	height: auto;
+	margin: auto;
+	padding:18px;
+	background-color: white;
+}
