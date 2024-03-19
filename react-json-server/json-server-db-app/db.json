@@ -1,0 +1,116 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+
+  "blogscategory": 
+  
+  [
+  
+  {
+    "id": 1001,
+    "categoryname":"News",
+    "added_date":"15-12-2023"
+  },
+   
+  {
+  "id": 1002,
+    "categoryname":"Technincal courses",
+    "added_date":"15-12-2023"
+  }
+],
+
+
+"addblogs": 
+  
+[
+
+{
+  "id": 1001,
+  "blogsname":"News",
+  "name":"brijesh",
+  "category":"news",
+  "added_date":"15-12-2023"
+},
+ 
+{
+  "id": 1002,
+  "blogsname":"Technical courses React js",
+  "name":"Brijesh",
+  "category":"Technical course",
+  "added_date":"15-12-2023"
+}
+ 
+
+],
+
+
+"contactus": 
+  
+[
+
+{
+  "id": 1001,
+  "name":"Brijesh",
+  "email":"brijesh@gmail.com",
+  "subject":"24x7 support",
+  "phone":9998003879,
+  "added_date":"15-12-2023"
+},
+ 
+{
+  "id": 1001,
+  "name":"asfaq",
+  "email":"asfaq@gmail.com",
+  "subject":"24x7 support",
+  "phone":9998003878,
+  "added_date":"15-12-2023"
+}
+
+],
+
+"addproduct":   
+[
+
+{
+  "id": 1001,
+  "categoryid":1,
+  "subcategoryid":1,
+  "name":"samsung guru",
+  "photo":"https://rukminim2.flixcart.com/image/850/1000/mobile/g/t/z/samsung-guru-gt-e1200-original-imaebprntwrt6xa7.jpeg?q=20",
+  "oldprice":1285,
+  "offerprice":1085,
+  "qty":1,
+  "description":"good products",
+  "added_date":"15-12-2023"
+},
+{
+  "id": 1002,
+  "categoryid":1,
+  "subcategoryid":1,
+  "name":"samsung Z fold",
+  "photo":"https://lh3.googleusercontent.com/spp/AE_ITi1vdfd0cVHkzi4NS9iy2Xsy-GXIiBeo8aHhdJ1MElnMwxs0TFQdd1xOCFgaiXsNvuevHsYQ_omYHZd1ps_nnOXRAWxwotgNusyZN657yEPsJLrnkarnZid25Rcswni53kQqwnLjB4ydCEpmXKj6F2JWC1_kltVZpbWSTUDApeBxhrCzsj3OlR4qVxBZ3n1HcVcx5Ap7=s512-pd-pc0x00ffffff",
+  "oldprice":135850,
+  "offerprice":115550,
+  "qty":1,
+  "description":"good products",
+  "added_date":"15-12-2023"
+}
+
+]
+
+}
