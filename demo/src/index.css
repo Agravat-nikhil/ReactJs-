@@ -1,0 +1,658 @@
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sorts+Mill+Goudy:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: 400;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  color: #001121;
+  background-color: rgba(246, 244, 242, 1);
+}
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+strong,
+sub,
+var,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-weight: 400;
+  vertical-align: top;
+  background: transparent;
+  list-style: none;
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+span,
+a {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+video,
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* typography */
+h1 {
+  font-size: 130px;
+  line-height: 120px;
+  font-family: "Sorts Mill Goudy", serif;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 60px;
+  line-height: 70px;
+  font-family: "Sorts Mill Goudy", serif;
+}
+
+h3 {
+  font-size: 40px;
+  line-height: 60px;
+  font-family: "Sorts Mill Goudy", serif;
+}
+
+h4 {
+  font-size: 36px;
+  line-height: 42px;
+  font-family: "Sorts Mill Goudy", serif;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+h5 {
+  font-size: 25px;
+  line-height: 35px;
+  font-family: "Sorts Mill Goudy", serif;
+}
+
+h6 {
+  font-size: 18px;
+  font-family: "Sorts Mill Goudy", serif;
+  line-height: normal;
+}
+
+p {
+  font-size: 20px;
+  line-height: 35px;
+  font-family: "Sorts Mill Goudy", serif;
+}
+
+.container {
+  max-width: 1720px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container.small-contain{
+  max-width: 1210px;
+  margin: 0 50px;
+}
+
+
+
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.space-between {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.s-mt {
+  margin-top: 120px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 12px 20px;
+  color: rgba(0, 0, 0, 1);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 1);
+  margin-top: 20px;
+  margin-left: 10px;
+  display: inline-block;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  /* z-index: 1; */
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 10px;
+  background: rgba(241, 224, 212, 1);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: 0.4s all ease-in-out;
+}
+
+.btn-primary::before {
+  left: -5px;
+  top: 5px;
+}
+
+.btn:hover::before {
+  left: 0;
+  top: 0;
+}
+
+/* *********** header css ***********/
+
+.header {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+  transition: .5s all ease-in-out;
+}
+
+.header-fixed {
+  background-color: rgba(246, 244, 242, 1);
+  transition: .5s all ease-in-out;
+}
+
+.main-header {
+  padding: 30px;
+}
+
+.header .navbar .menu-wrapper li {
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header .navbar .menu-wrapper li a {
+  color: #001121;
+  transition: .3s all ease;
+  display: block;
+}
+
+.header .navbar .menu-wrapper li a:hover {
+  color: #DE0C39;
+}
+
+.header .header-right .btn {
+  margin-left: 12px;
+}
+
+.header-right .logo {
+  display: none;
+}
+
+/* *********** header css ***********/
+
+.main-banner {
+  min-height: 100vh;
+  background-image: url(./assets/banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.banner-content {
+  width: 100%;
+}
+
+.down-arrow {
+  position: absolute;
+  top: 77%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeInUp 2s ease infinite;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translate(0px, 0);
+  }
+
+  100% {
+    transform: translate(0px, 50px);
+  }
+}
+
+.social-links {
+  position: absolute;
+  transform: translateX(86%) rotate(270deg);
+  transform-origin: 0 0;
+  right: 0;
+  bottom: 10%;
+}
+
+.social-links li {
+  margin: 0 10px;
+}
+
+.social-links a {
+  font-family: "Petrona", serif;
+  color: #000;
+  text-transform: capitalize;
+  transition: .3s all ease-in-out;
+}
+
+.social-links a:hover {
+  color: white;
+}
+
+.social-links a img {
+  transform: rotate(90deg);
+  margin-right: 10px;
+}
+
+.bg-text {
+  width: 100%;
+  color: rgba(238, 232, 227, 1);
+  font-size: 240px;
+  padding: 0 45px;
+}
+
+.bg-text span {
+  display: block;
+  line-height: 345px;
+}
+
+.bg-text span:last-child {
+  text-align: right;
+  margin-top: -150px;
+}
+
+.our-story-sec {
+  position: relative;
+}
+
+.our-story-sec .block {
+  max-width: 660px;
+  width: 100%;
+  margin: auto;
+  margin-top: -240px;
+  text-align: center;
+}
+
+.our-story-sec .block h4 {
+  line-height: 52px;
+}
+
+.jewelry-collection .title {
+  width: 100%;
+  max-width: 810px;
+  margin: auto;
+}
+
+.jewelry-collection .title h4 {
+  color: #C09578;
+}
+
+.products {
+  display: flex;
+  gap: 30px;
+  margin-top: 70px;
+}
+
+.product.product-b {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.products .product {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+}
+
+.products .product .btn {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+}
+
+.products .product>.btn::before {
+  left: -5px;
+  top: 5px;
+}
+
+.products .product .btn:hover::before {
+  left: 0;
+  top: 0;
+}
+
+/* slider css */
+.slider-sec {
+  gap: 20px;
+}
+
+.slider-content {
+  width: 22%;
+}
+
+.slider-content h4 {
+  margin-bottom: 20px;
+  color: #C09578;
+}
+
+.slider-card a img {
+  width: 100%;
+}
+
+.slider-card span {
+  color: #717274;
+  font-family: "Sorts Mill Goudy", serif;
+  margin-top: 15px;
+}
+
+.slider-container {
+  width: 100%;
+  margin: auto;
+}
+
+.slick-slider {
+  width: 74%;
+  margin: 0 -15px;
+}
+
+.slick-slide {
+  padding: 0 14px;
+  text-align: left;
+}
+
+.slick-slide hr {
+  height: 1px;
+  border: none;
+  background-color: #D9D9D9;
+}
+
+.slick-slide .price {
+  margin-bottom: 15px;
+}
+
+.slick-slide a h6 {
+  color: #000;
+}
+
+.slick-slide .price h6 {
+  margin-right: 10px;
+}
+
+.slick-slide .price h6:nth-child(2) {
+  color: #CB9274;
+}
+
+.cart-menu {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity, transform, 0.3s all ease-in-out;
+}
+
+.slick-slide:hover .cart-menu {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.cart-menu .icon {
+  padding: 8px 10px;
+  background-color: #F1E0D4;
+  margin-right: 14px;
+}
+
+.cart-menu .cart-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background-color: #E9E9E9;
+  color: #717274;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.slick-prev,
+.slick-next {
+  height: 30px !important;
+  width: 30px !important;
+  top: 31.5% !important;
+}
+
+.slick-prev::before {
+  content: "" !important;
+}
+
+.slick-next::before {
+  content: "" !important;
+  background-image: url(./assets/right-arrow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  background-color: #CB9274;
+  display: inline-block;
+}
+.latest-collection-sec{
+  position: relative;
+}
+.latest-collection-sec::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  transform: translateY(-10%);
+  height: 88%;
+  width: 100%;
+  z-index: -1;
+  background-color: #F1F1F1;
+}
+.latest-collection-sec .left-part {
+  width: 30%;
+  padding-right: 35px;
+}
+
+.latest-collection-sec .center-part {
+  width: 40%;
+}
+
+.latest-collection-sec .right-part {
+  width: 28%;
+  padding-left: 86px;
+}
+
+.latest-collection-sec .right-part h4,
+.latest-collection-sec .right-part .light-text {
+  color: #CB9274;
+}
+
+.latest-collection-sec .right-part p {
+  margin-bottom: 15px;
+}
+
+.latest-collection-sec .right-part p div {
+  height: 10px;
+  width: 10px;
+  margin-right: 15px;
+  background: #CB9274;
+  transform: rotate(45deg);
+}
+
+.antique-sec .left-part{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.antique-sec .left-part::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: auto;
+  height: 80%;
+  width: calc(100% + 19%);
+  background-color: #EBE2DD;
+  z-index: -1;
+}
+.antique-sec .left-part img{
+  margin: 0 auto;
+  width: fit-content;
+}
+.antique-sec .left-part{
+  width: 50%;
+  position: relative;
+  z-index: -1;
+}
+.antique-sec .right-part {
+  width: 50%;
+  padding-left: 5%;
+}
+.collection-block{ 
+  position: relative;
+  max-width: 1210px;
+  margin: auto;
+}
+.collection-block::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 100px);
+  transform: translateY(-50%);
+  background-color: #EFEAE0;
+  z-index: -1;
+}
+
+.collection-sec .left-part{
+  width: 50%;
+}
+.collection-sec .left-part img{
+  margin-top: -325px;
+}
+
+.collection-sec .right-part{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.collection-sec .right-part img{
+  width: max-content;
+  margin: 0 auto;
+}
+.Journal-sec .left-part:nth-child(2){
+position:relative;
+}
+
+
+
+
