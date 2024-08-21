@@ -1,0 +1,35 @@
+
+
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+
+
+
+/*<-----------------------  CONTACT CSS START HERE  -----------------------> */
+.abc{
+        display: grid;
+}
+
+.abc input{
+        border: none;
+        border-bottom: 1px solid black;
+        width: 400px;
+}
+.contact-btn{
+        width: 50px;
+}
+
+
+.slick-slider {
+        margin: 40px;
+    }
+
+
+.location {
+        color:blue;
+        background-color: #fff;
+        margin-left: 20px;
+}
