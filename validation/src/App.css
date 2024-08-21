@@ -1,0 +1,177 @@
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: rgb(147, 147, 182);
+}
+
+nav {
+  background-color: rgb(108, 127, 189);
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  margin: 0 15px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* Singin - SingUp css  */
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 8px;
+  background-color: rgb(249, 249, 249);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  background-color: rgb(0, 123, 255);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(0, 86, 179);
+}
+
+.error {
+  color: red;
+  font-size: 16px; 
+  margin-top: -3px; 
+}
+.checkbox-container
+{
+  margin-right: 260px;
+}
+
+.size{
+  width: 365px;
+}
+
+
+/* Profile CSS */
+
+.profile-container {
+  margin: 20px;
+}
+
+.profile-table {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.profile-table th,
+.profile-table td {
+  padding: 8px;
+  text-align: left;
+}
+
+button {
+  margin: 5px;
+  width: 77px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.edit-button,
+.delete-button,
+.save-button,
+.cancel-button,
+.logout-button {
+  background-color: rgb(0, 123, 255);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.logout-button {
+  background-color: rgb(220, 53, 69);
+}
+.pad{
+  padding: 10px;
+}
+.user-list{
+  padding-top: 18px;
+  
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.signup-form button {
+  margin-top: 10px;
+  margin-left: 164px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(76, 175, 80);
+  color: white;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 0.875em;
+}
+
+
+
+
+
