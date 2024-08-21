@@ -1,0 +1,87 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.coupon-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: gray;
+}
+
+.coupon-form {
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid rgb(204, 204, 204);
+  background-color: rgb(249, 249, 249);
+  border-radius: 6px;
+}
+
+.group {
+  margin-bottom: 15px;
+}
+
+.group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight:bold;
+}
+
+.radio {
+  padding-left: 300px;
+}
+.side-row{
+  padding-left: 40px;
+}
+
+.group input {
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid rgb(204, 204, 204);
+}
+.group select{
+  padding: 4px;
+  width: 90px;
+  border-radius: 2px;
+}
+
+.group div {
+  display: flex;
+  justify-content: flex-start;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: rgb(0, 123, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: rgb(0, 86, 179);
+}
+
+.coupon-list
+{
+  text-align: center;
+  align-items: start;
+}
+
+.coupon-list p{
+  font-weight: bold;
+}
+
+.coupon-value {
+  color: cornflowerblue;
+}
+

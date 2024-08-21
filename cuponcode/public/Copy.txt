@@ -1,0 +1,269 @@
+import React, { useState, useEffect } from 'react';
+import '../App.css';
+
+const formatDate = (date) => date.toISOString().split('T')[0];
+
+const CouponCode = () => {
+    const [amount, setAmount] = useState('');
+    const [discount, setDiscount] = useState('');
+    const [type, setType] = useState('percentage');
+    const [duration, setDuration] = useState('forever');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [couponCode, setCouponCode] = useState('');
+    const [discountAmount, setDiscountAmount] = useState('');
+    const [totalPrice, setTotalPrice] = useState('');
+    const [coupon, setCoupon] = useState(null);
+    const [generated, setGenerated] = useState(false);
+
+    useEffect(() => {
+        if (couponCode) {
+            setCoupon({
+                amount,
+                discount: (type === 'percentage' && PercentageDiscount(discount)) ?
+                discount: (type === 'flat' && FlatDiscount(discount)) ? discount : '',
+                type,
+                duration,
+                startDate,
+                endDate,
+                couponCode,
+                discountAmount,
+                totalPrice,
+            });
+        }
+    }, [amount, discount, type,  duration, startDate, endDate, couponCode, discountAmount, totalPrice]);
+
+    const PercentageDiscount = (discount) => {
+        const value = parseFloat(discount);
+        return !isNaN(value) && value >= 0 && value <= 100;
+    };
+
+    const FlatDiscount = (discount) => {
+        const value = parseFloat(discount);
+        return !isNaN(value) && value >= 0 && value <= 500;
+    };
+
+    const handle_Discount = () => {
+        const amountValue = parseFloat(amount);
+        const discountValue = parseFloat(discount);
+
+        if (type === 'percentage') {
+            if (!PercentageDiscount(discount)) {
+                alert('Percentage discount only 0% to 100% allowed.');
+                return;
+            }
+            const typeAmount = (amountValue * discountValue) / 100; 
+            setDiscountAmount(typeAmount.toFixed(2));
+            setTotalPrice((amountValue - typeAmount).toFixed(2));
+
+        } else if (type === 'flat') {
+            if (!FlatDiscount(discount)) {
+                alert('Flat discount only 0 and 500 rupees allowed.');
+                return;
+            }
+
+            const typeAmount = discountValue;
+            setDiscountAmount(typeAmount.toFixed(2));
+            setTotalPrice((amountValue - typeAmount).toFixed(2));
+        }
+    };
+
+    const generateCode = () => {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let code = '';
+        for (let i = 0; i < 10; i++) {
+            code += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return code;
+    };
+
+    const handle_Submit = (e) => {
+        e.preventDefault();
+
+        const today = new Date();
+        const oneWeek = new Date();
+        oneWeek.setDate(today.getDate() - 7);
+        
+        const dateStart = formatDate(new Date(startDate));
+        const dateEnd = formatDate(new Date(endDate));
+        const todayDate = formatDate(today);
+        const lastOneWeek = formatDate(oneWeek);
+
+        if (dateStart < lastOneWeek) {
+            alert('Start date earlier than one week ago.');
+            return; 
+        }
+
+        if (dateEnd > todayDate) {
+            alert('End date cannot the future.');   
+            return;
+        }     
+
+        handle_Discount();
+
+        if (generated) {
+            alert('Coupon code already generate.');
+            return;
+        }
+
+        const newCouponCode = generateCode();
+        setCouponCode(newCouponCode);
+        setGenerated(true);
+    };
+
+    const handle_Reset = () => {
+        setAmount('');
+        setDiscount('');
+        setType('percentage');
+        setDuration('forever');
+        setStartDate('');
+        setEndDate('');
+        setCouponCode('');
+        setDiscountAmount('');
+        setTotalPrice('');
+        setCoupon('');
+        setGenerated(false);
+    };
+
+    return (
+        <>
+            <form onSubmit={handle_Submit} className="coupon-form">
+                <div className="group">
+                    <label>Material Amount</label>
+                    <input
+                        type="text"
+                        value={amount}
+                        onChange={(e) => setAmount(e.target.value)}
+                        placeholder="Enter Amount"
+                        required
+                    />
+                </div>
+
+                <div className="group">
+                    <label>Discount</label>
+                    <input
+                        type="text"
+                        value={discount}
+                        onChange={(e) => setDiscount(e.target.value)}
+                        placeholder='Discount'
+                        required
+                    />
+                </div>
+
+                <div className="group">
+                    <label>Type</label>
+                    <div>
+                        <label>
+                            <input
+                                type="radio"
+                                value="percentage"
+                                checked={type === 'percentage'}
+                                onChange={(e) => setType(e.target.value)}
+                            />
+                            Percentage
+                        </label>
+                        <label className='side-row'>
+                            <input
+                                type="radio"
+                                value="flat"
+                                checked={type === 'flat'}
+                                onChange={(e) => setType(e.target.value)}
+                            />
+                            Flat   
+                        </label>
+                    </div>
+                </div>
+
+                <div className="group">
+                    <label>Duration</label>
+                    <select
+                        value={duration}
+                        onChange={(e) => setDuration(e.target.value)}
+                    >
+                        <option value="forever">Forever</option>
+                        <option value="once">Once</option>
+                    </select>
+                </div>
+
+                <div className="group">
+                    <label>Start Date</label>
+                    <input
+                        type="date"
+                        value={startDate}
+                        onChange={(e) => setStartDate(e.target.value)}
+                        required
+                    />
+                </div>
+
+                <div className="group">
+                    <label>End Date</label>
+                    <input
+                        type="date"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
+                        required
+                    />
+                </div>
+
+                <div className="group">
+                    <label>Coupon Code</label>
+                    <input 
+                        type="text" 
+                        value={couponCode}
+                        readOnly
+                        placeholder="Coupon Code"   
+                    />
+                </div>
+
+                <div className="group">
+                    <label>Discount Amount</label>
+                    <input
+                        type="text"
+                        value={discountAmount}
+                        placeholder='Discount Amount'
+                        readOnly
+                    />
+                </div>
+
+                <div className="group">
+                    <label>Total Price</label>
+                    <input
+                        type="text"
+                        value={totalPrice}
+                        placeholder='Total Price'
+                        readOnly
+                    />
+                </div>
+                <br />
+                <button type="submit">Save</button>
+                <button type="button" onClick={handle_Reset}>Reset</button>
+            </form>
+            <br />
+            <br />
+            <div className='coupon-form'> 
+                <div className="coupon-list">
+                    <h2>Coupon List</h2>  
+                    {coupon && (
+                        <>
+                            <p>Material Amount: <span className='coupon-value'>{coupon.amount}</span></p>
+                            <p>Discount: <span className='coupon-value'>
+                                {type === 'percentage' ? 
+                                    (PercentageDiscount(coupon.discount) ? `${coupon.discount}%` : '')
+                                    :(FlatDiscount(coupon.discount) ? `${coupon.discount}.Rs` : '')}
+                            </span></p> 
+                            <p>Type: <span className='coupon-value'>{coupon.type}</span></p>
+                            <p>Duration: <span className='coupon-value'>{coupon.duration}</span></p>
+                            <p>Start Date: <span className='coupon-value'>{coupon.startDate}</span></p>
+                            <p>End Date: <span className='coupon-value'>{coupon.endDate}</span></p>
+                            <p>Coupon Code: <span className='coupon-value'>{coupon.couponCode}</span></p>
+                            <p>Discount Amount: <span className='coupon-value'>{coupon.discountAmount} Rs</span></p>
+                            <p>Total Price: <span className='coupon-value'>{coupon.totalPrice} Rs</span></p>
+                        </>
+                    )}
+                </div>   
+            </div>     
+        </>    
+    );    
+};
+
+export default CouponCode;
