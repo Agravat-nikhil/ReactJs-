@@ -5,20 +5,22 @@ import { MDBContainer, MDBBtn, MDBRow, MDBNavbar } from 'mdb-react-ui-kit';
 function Layout() {
   return (
     <>
-      <MDBContainer fluid className="p-2 ">
+      <MDBContainer fluid className="p-2 align-items-center page-align-items-md-center">
         <MDBRow>
           <div className="col-md-3 ms-5">
-            <Link to="/">About</Link> |  <Link to="Contect">Contact Us</Link> |{' '}
-            <Link to="/">Order Tracking</Link>
+            <Link to="/About-page">About</Link> | <Link to="Contect">Contact Us</Link> |
+            <Link to="/Order-Tracking">Order Tracking</Link>
           </div>
         
           <div className="col-md-3">
             Get great devices up to 50% <Link to="/" className="text-success">View Details</Link>
           </div>
           
-          <div className="col-md-5  ms-4">
-            <Link to="/">Need Help?</Link> | Call Us{' '}
-            <b className="text-success">(+91)-8160764343</b>
+          <div className="col-md-5 ms-4">
+            <Link to="/">Need Help?</Link> | Call Us
+            <a href="tel:+918160764343" className="text-success">
+              <b>(+91)-8160764343</b>
+            </a>
             <i className="bi bi-c-circle"></i>
 
             <select name="language" className="border-0 bg-light ms-2">
@@ -27,23 +29,22 @@ function Layout() {
               <option value="">Gujarati</option>
             </select>
             
-            <select name="currency" className="border-0 bg-light ms-1 ">
+            <select name="currency" className="border-0 bg-light ms-1">
               <option value="">USD</option>
               <option value="">INR</option>
             </select>
           </div>
-          <hr className="border border-1 border-dark mt-1" />
+          <hr className="border border-1 border-dark " />
         </MDBRow>
 
-
         <MDBRow>
-          <div className="col-md-2 ms-5 logo pb-0 mt-1">
+          <div className="col-md-2 ms-5 logo pb-0">
             <Link to="/" className="navbar-brand text-success">
               NestBeans
             </Link>
           </div>
 
-          <div className="col-md-3  mt-3">
+          <div className="col-md-3 mt-1">
             <form>
               <div className="input-group input-decrement">
                 <input type="text" name="search" placeholder="Search" className="form-control" />
@@ -54,10 +55,9 @@ function Layout() {
             </form>
           </div>
 
-          <div className="col-md-6 mt-3 ms-5 ">
-
+          <div className="col-md-6 mt-2 ms-5">       
             <select name="location" className="border-0 bg-light">
-              <option value="">Locations</option>
+              <option value="">Locations</option>  
               <option value="">Gujarat</option>
             </select>
 
@@ -73,7 +73,7 @@ function Layout() {
               <span className="text-dark ms-2">Wishlist</span>
             </Link>
 
-            <Link to="*" className="ms-4">
+            <Link to="*" className="ms-4"> 
               <i className="fas fa-shopping-bag fa-lg"></i>
               <span className="badge bg-success badge-notification">0</span>
               <span className="text-dark ms-2">Cart</span>
@@ -90,7 +90,7 @@ function Layout() {
       </MDBContainer>
 
       <MDBNavbar className="navbar navbar-expand-lg p-2">
-        <MDBBtn type="button" className="ms-5 btn btn-sm btn-outline-dark mb-2 p-2">
+        <MDBBtn type="button" className="ms-5 btn btn-sm btn-outline-dark  p-2 ">
           Nest All Categories
         </MDBBtn>
 
@@ -100,10 +100,10 @@ function Layout() {
           data-bs-toggle="collapse"
           data-bs-target="#btnColl"
         >
-          <i className="bi bi-grid-3x3"></i>
+          <i className="bi bi-grid-bi-grid-3x3-gap"></i>
         </MDBBtn>
 
-        <div className="collapse navbar-collapse" id="btnColl">
+        <div className="collapse navbar-collapse ms-4" id="btnColl">
           <ul className="navbar-link">
             <li>
               <Link to="Deals">Hot Deals</Link>
@@ -129,15 +129,15 @@ function Layout() {
                   <Link to="NoFound">Our Locations</Link>
                 </li>
               </ul>
-            </li>
+            </li>  
             <li>
               <Link to="Vendor">Vendors</Link>
             </li>
             <li>
-              <Link to="Ourmanu">Our Menu</Link>
+              <Link to="OurManu">Our Menu</Link>
             </li>
             <li>
-              <Link to="NoFound">Blogs</Link>
+              <Link to="Blogs">Blogs</Link>
             </li>
             <li>
               <Link to="Contect">Contact</Link>
@@ -154,7 +154,6 @@ function Layout() {
         </div>
 
         <hr className="border border-1 border-dark mt-1" />
-
       </MDBNavbar>
 
       <Outlet />

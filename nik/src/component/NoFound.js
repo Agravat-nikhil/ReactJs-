@@ -5,14 +5,14 @@ var img1='images/404.gif';
 function NoFound() {
     return (
 
-        <React.Fragment>
+        <>
             <MDBContainer fluid className="content bg-white p-2">
             
                <Link to="/"><img src={img1}  className="img-fluid" alt='404 not founds' /></Link>
         
-            </MDBContainer>
+            </MDBContainer> 
              <Outlet />  
-        </React.Fragment>
+        </>
 
     )
 }

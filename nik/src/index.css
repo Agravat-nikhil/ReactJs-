@@ -1,24 +1,20 @@
-
-
 *{
 	padding: 0px;
 	margin: 0px;
 }
 
-
-
-
 /*<-----------------------  CONTACT CSS START HERE  -----------------------> */
 .abc{
         display: grid;
+        background-color: aliceblue;
 }
 
 .abc input{
         border: none;
-        border-bottom: 1px solid black;
+        border-bottom: 2px solid black !important;
         width: 400px;
 }
-.contact-btn{
+.contact-btn{    
         width: 50px;
 }
 
@@ -33,3 +29,5 @@
         background-color: #fff;
         margin-left: 20px;
 }
+
+

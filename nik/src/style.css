@@ -153,7 +153,8 @@
     font-size: small !important;
     font-weight: bolder !important;
     letter-spacing: 2px !important;
-    font-size: 29px !important;
+    font-size: 32px !important;
+    margin-top: -9px;
 }
 
 .navbar 
@@ -205,6 +206,44 @@ margin-left: 1% !important;
     height: 450px !important;
 }
 
+/* --------------------- OurManu CSS Start Here ----------------------  */
+
+.card-custom {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-custom img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-custom .btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.card-custom .btn:hover {
+  background-color: #0056b3;
+}
+
+/* -------------------- Slider CSS Start Here --------------------  */
+.carousel-item {
+  height: 100vh; 
+}           
+
+.carousel-item img {
+  object-fit: cover; 
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-caption {
+  bottom: 20px; 
+}
+
+
+
 
 /*____________________________  MEDIA QUERY START HERE ____________________________ */
 
@@ -234,7 +273,7 @@ margin-left: 1% !important;
 
 .abc input{
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 0px solid black;
     width: 360px;
 }
 .contact-btn{
